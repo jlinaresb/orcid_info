@@ -1,16 +1,17 @@
 # Prerequisites
 
-Esta función se basa en el paquete 'rorcid', por lo que su previa instalación es necesaria.
+This function is a modification of the 'rorcid' package, for quick consultation of researchers. The package is installed and loaded into the function.
 
 ```{r}
 install.packages('rorcid')
 require(rorcid)
 ```
 
+For authentication and use of the function it is necessary to log in to the ORCID website.
 
-# Objective
+# Output
 
-Esta función obtiene información de la base de datos de ORCID con los indicadores que se muestran a continuación:
+This function obtains information from the ORCID database with the indicators shown below (if public):
 
 * ORCID
 * Scopus ID
@@ -21,4 +22,15 @@ Esta función obtiene información de la base de datos de ORCID con los indicado
 * Keywords
 * Country
 
-Es útil en la búsqueda de nuevos colaboradores entre diferentes grupos de investigación.
+The output of the function is a data.frame object with the above indicators as variables.
+
+
+# Limitation
+
+Only 200 observations can be obtained for each query.
+
+# Usage example
+
+```{r}
+query = get.orcid.info('Machine Learning , bioinformatics')
+```
