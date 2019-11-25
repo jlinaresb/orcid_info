@@ -17,7 +17,7 @@ get.orcid.info = function(query){
     info[[i]] = as.orcid(x = ids[i])
     
     data[[i]] = list(
-      orcid = info[[i]][[1]]$addresses$address$`source.source-orcid.path`,
+      orcid = ids[i],
       scopus.id = info[[i]][[1]]$`external-identifiers`$`external-identifier`$`external-id-value`,
       first.name = info[[i]][[1]]$name$`given-names`$value,
       last.name = info[[i]][[1]]$name$`family-name`$value,
